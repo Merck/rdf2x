@@ -1,0 +1,11 @@
+@base <http://example.org/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+<#spiderman>
+        a foaf:Person, foaf:Agent ;
+        foaf:name "Spiderman".
+
+<#lexcorp>
+        a foaf:Organization, foaf:Agent ;
+        foaf:name "LexCorp" ;
+        foaf:homepage "https://www.lexcorp.io/".

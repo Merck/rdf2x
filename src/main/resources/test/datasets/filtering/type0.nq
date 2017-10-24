@@ -1,0 +1,27 @@
+#<http://t.com/a> <http://www.w3.org/2000/01/rdf-schema#label> "label A"^^<http://www.w3.org/2001/XMLSchema#string> <http://t.com/filtering> .
+<http://t.com/b> <http://www.w3.org/2000/01/rdf-schema#label> "label B"^^<http://www.w3.org/2001/XMLSchema#string> <http://t.com/filtering> .
+#<http://t.com/a/1> <http://www.w3.org/2000/01/rdf-schema#label> "label 1"^^<http://www.w3.org/2001/XMLSchema#string> <http://t.com/filtering> .
+#<http://t.com/a/1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://t.com/a> <http://t.com/filtering> .
+#<http://t.com/a/1> <http://t.com/name> "name 1"^^<http://www.w3.org/2001/XMLSchema#string> <http://t.com/filtering> .
+#<http://t.com/a/1> <http://t.com/knows> <http://t.com/a/2> <http://t.com/filtering> .
+#<http://t.com/a/2> <http://www.w3.org/2000/01/rdf-schema#label> "label 2"^^<http://www.w3.org/2001/XMLSchema#string> <http://t.com/filtering> .
+#<http://t.com/a/2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://t.com/a> <http://t.com/filtering> .
+#<http://t.com/a/2> <http://t.com/name> "name 2"^^<http://www.w3.org/2001/XMLSchema#string> <http://t.com/filtering> .
+#<http://t.com/a/2> <http://t.com/knows> <http://t.com/a/3> <http://t.com/filtering> .
+#<http://t.com/a/3> <http://www.w3.org/2000/01/rdf-schema#label> "label 3"^^<http://www.w3.org/2001/XMLSchema#string> <http://t.com/filtering> .
+#<http://t.com/a/3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://t.com/a> <http://t.com/filtering> .
+#<http://t.com/a/3> <http://t.com/name> "name 3"^^<http://www.w3.org/2001/XMLSchema#string> <http://t.com/filtering> .
+#<http://t.com/a/3> <http://t.com/knows> <http://t.com/a/4> <http://t.com/filtering> .
+#<http://t.com/a/4> <http://www.w3.org/2000/01/rdf-schema#label> "label 4"^^<http://www.w3.org/2001/XMLSchema#string> <http://t.com/filtering> .
+#<http://t.com/a/4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://t.com/a> <http://t.com/filtering> .
+#<http://t.com/a/4> <http://t.com/name> "name 4"^^<http://www.w3.org/2001/XMLSchema#string> <http://t.com/filtering> .
+#<http://t.com/a/4> <http://t.com/knows> <http://t.com/a/5> <http://t.com/filtering> .
+#<http://t.com/a/5> <http://www.w3.org/2000/01/rdf-schema#label> "label 5"^^<http://www.w3.org/2001/XMLSchema#string> <http://t.com/filtering> .
+#<http://t.com/a/5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://t.com/a> <http://t.com/filtering> .
+#<http://t.com/a/5> <http://t.com/name> "name 5"^^<http://www.w3.org/2001/XMLSchema#string> <http://t.com/filtering> .
+#<http://t.com/a/5> <http://t.com/knows> <http://t.com/a/1> <http://t.com/filtering> .
+#<http://t.com/b/1> <http://www.w3.org/2000/01/rdf-schema#label> "label 1"^^<http://www.w3.org/2001/XMLSchema#string> <http://t.com/filtering> .
+#<http://t.com/b/1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://t.com/b> <http://t.com/filtering> .
+#<http://t.com/b/1> <http://t.com/name> "name 1"^^<http://www.w3.org/2001/XMLSchema#string> <http://t.com/filtering> .
+#<http://t.com/b/1> <http://t.com/knows> <http://t.com/a/1> <http://t.com/filtering> .
+#<http://t.com/b/1> <http://t.com/knows> <http://t.com/a/3> <http://t.com/filtering> .

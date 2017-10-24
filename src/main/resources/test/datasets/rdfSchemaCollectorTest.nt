@@ -1,0 +1,60 @@
+# administrative territorial entity
+<http://www.wikidata.org/entity/Q56061> <http://www.w3.org/2000/01/rdf-schema#label> "administrative territorial entity"@en .
+# state is subclass of administrative territorial entity
+<http://www.wikidata.org/entity/Q7275> <http://www.wikidata.org/prop/direct/P279> <http://www.wikidata.org/entity/Q56061> .
+<http://www.wikidata.org/entity/Q7275> <http://www.w3.org/2000/01/rdf-schema#label> "state"@en .
+# sovereign state is subclass of state
+<http://www.wikidata.org/entity/Q3624078> <http://www.wikidata.org/prop/direct/P279> <http://www.wikidata.org/entity/Q7275> .
+<http://www.wikidata.org/entity/Q3624078> <http://www.w3.org/2000/01/rdf-schema#label> "sovereign state"@en .
+# country is subclass of administrative territorial entity
+<http://www.wikidata.org/entity/Q6256> <http://www.wikidata.org/prop/direct/P279> <http://www.wikidata.org/entity/Q56061> .
+<http://www.wikidata.org/entity/Q6256> <http://www.w3.org/2000/01/rdf-schema#label> "country"@en .
+# Great Britain is a sovereign state
+<http://www.wikidata.org/entity/Q161885> <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q3624078> .
+<http://www.wikidata.org/entity/Q161885> <http://www.w3.org/2000/01/rdf-schema#label> "Kingdom of Great Britain"@en .
+<http://www.wikidata.org/entity/Q161885> <http://www.w3.org/2000/01/rdf-schema#label> "Königreich Großbritannien"@en .
+# Scotland is a country
+<http://www.wikidata.org/entity/Q22> <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q6256> .
+<http://www.wikidata.org/entity/Q22> <http://www.w3.org/2000/01/rdf-schema#label> "Scotland"@en .
+<http://www.wikidata.org/entity/Q22> <http://schema.org/name> "Scotland"@en .
+<http://www.wikidata.org/entity/Q22> <http://www.w3.org/2000/01/rdf-schema#label> "Écosse"@fr .
+<http://www.wikidata.org/entity/Q22> <http://schema.org/name> "Écosse"@fr .
+<http://www.wikidata.org/entity/Q22> <http://www.w3.org/2000/01/rdf-schema#label> "Scozia"@it .
+<http://www.wikidata.org/entity/Q22> <http://schema.org/name> "Scozia"@it .
+# statement about Scotland country code
+<http://www.wikidata.org/entity/Q22> <http://www.wikidata.org/prop/direct/P474> "+44" .
+<http://www.wikidata.org/entity/Q22> <http://www.wikidata.org/prop/P474> <http://www.wikidata.org/entity/statement/Q22-f07c41de-48a2-c7d0-cc57-9a9d5c8fd028> .
+<http://www.wikidata.org/entity/statement/Q22-f07c41de-48a2-c7d0-cc57-9a9d5c8fd028> <http://www.wikidata.org/prop/direct/P31> <http://wikiba.se/ontology-beta#Statement> .
+<http://www.wikidata.org/entity/statement/Q22-f07c41de-48a2-c7d0-cc57-9a9d5c8fd028> <http://www.wikidata.org/prop/direct/P31> <http://wikiba.se/ontology-beta#BestRank> .
+<http://www.wikidata.org/entity/statement/Q22-f07c41de-48a2-c7d0-cc57-9a9d5c8fd028> <http://wikiba.se/ontology-beta#rank> <http://wikiba.se/ontology-beta#NormalRank> .
+<http://www.wikidata.org/entity/statement/Q22-f07c41de-48a2-c7d0-cc57-9a9d5c8fd028> <http://www.wikidata.org/prop/statement/P474> "+44" .
+<http://www.wikidata.org/entity/statement/Q22-f07c41de-48a2-c7d0-cc57-9a9d5c8fd028> <http://www.w3.org/ns/prov#wasDerivedFrom> <http://www.wikidata.org/reference/d6e3ab4045fb3f3feea77895bc6b27e663fc878a> .
+<http://www.wikidata.org/prop/direct/P474> <http://www.w3.org/2000/01/rdf-schema#label> "country calling code"@en .
+<http://www.wikidata.org/prop/direct/P474> <http://www.w3.org/2000/01/rdf-schema#label> "internationale Telefonvorwahl"@de .
+<http://www.wikidata.org/prop/direct/P474> <http://www.w3.org/2000/01/rdf-schema#label> "Code d'appel du pays"@fr .
+<http://www.wikidata.org/prop/statement/P474> <http://www.w3.org/2000/01/rdf-schema#label> "country calling code"@en .
+<http://www.wikidata.org/prop/statement/P474> <http://www.w3.org/2000/01/rdf-schema#label> "internationale Telefonvorwahl"@de .
+<http://www.wikidata.org/prop/statement/P474> <http://www.w3.org/2000/01/rdf-schema#label> "Code d'appel du pays"@fr .
+# statement about Scotland being part of Great Britain
+<http://www.wikidata.org/entity/Q22> <http://www.wikidata.org/prop/P131> <http://www.wikidata.org/entity/statement/Q22-706bae70-404a-4c32-0dfb-b8d0d06fbc8a> .
+<http://www.wikidata.org/entity/statement/Q22-706bae70-404a-4c32-0dfb-b8d0d06fbc8a> <http://www.wikidata.org/prop/direct/P31> <http://wikiba.se/ontology-beta#Statement> .
+<http://www.wikidata.org/entity/statement/Q22-706bae70-404a-4c32-0dfb-b8d0d06fbc8a> <http://wikiba.se/ontology-beta#rank> <http://wikiba.se/ontology-beta#NormalRank> .
+<http://www.wikidata.org/entity/statement/Q22-706bae70-404a-4c32-0dfb-b8d0d06fbc8a> <http://www.wikidata.org/prop/statement/P131> <http://www.wikidata.org/entity/Q161885> .
+<http://www.wikidata.org/entity/statement/Q22-706bae70-404a-4c32-0dfb-b8d0d06fbc8a> <http://www.wikidata.org/prop/qualifier/P580> "1707-01-01T00:00:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://www.wikidata.org/entity/statement/Q22-706bae70-404a-4c32-0dfb-b8d0d06fbc8a> <http://www.wikidata.org/prop/qualifier/value/P580> <http://www.wikidata.org/value/6c55750743ae35bcb55e68331ca0bc8f> .
+<http://www.wikidata.org/entity/statement/Q22-706bae70-404a-4c32-0dfb-b8d0d06fbc8a> <http://www.wikidata.org/prop/qualifier/P582> "1800-12-31T00:00:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://www.wikidata.org/entity/statement/Q22-706bae70-404a-4c32-0dfb-b8d0d06fbc8a> <http://www.wikidata.org/prop/qualifier/value/P582> <http://www.wikidata.org/value/68a56ff58161a2656a0b632722ccd635> .
+<http://www.wikidata.org/prop/qualifier/P580> <http://www.w3.org/2000/01/rdf-schema#label> "start time"@en .
+<http://www.wikidata.org/prop/qualifier/P582> <http://www.w3.org/2000/01/rdf-schema#label> "end time"@en .
+<http://www.wikidata.org/prop/statement/P131> <http://www.w3.org/2000/01/rdf-schema#label> "located in the administrative territorial entity"@en .
+<http://www.wikidata.org/prop/statement/P131> <http://www.w3.org/2000/01/rdf-schema#label> "liegt in der Verwaltungseinheit"@de .
+<http://www.wikidata.org/prop/statement/P131> <http://www.w3.org/2000/01/rdf-schema#label> "Situé dans l'entité administrative territoriale"@fr .
+# statement about Scotland website
+<http://www.wikidata.org/entity/Q22> <http://www.wikidata.org/prop/P856> <http://www.wikidata.org/entity/statement/Q22-CCFA116F-7B7B-4EDE-B68B-DEBB463D96AA> .
+<http://www.wikidata.org/entity/statement/Q22-CCFA116F-7B7B-4EDE-B68B-DEBB463D96AA> <http://www.wikidata.org/prop/direct/P31> <http://wikiba.se/ontology-beta#Statement> .
+<http://www.wikidata.org/entity/statement/Q22-CCFA116F-7B7B-4EDE-B68B-DEBB463D96AA> <http://www.wikidata.org/prop/direct/P31> <http://wikiba.se/ontology-beta#BestRank> .
+<http://www.wikidata.org/entity/statement/Q22-CCFA116F-7B7B-4EDE-B68B-DEBB463D96AA> <http://wikiba.se/ontology-beta#rank> <http://wikiba.se/ontology-beta#NormalRank> .
+<http://www.wikidata.org/entity/statement/Q22-CCFA116F-7B7B-4EDE-B68B-DEBB463D96AA> <http://www.wikidata.org/prop/statement/P856> <http://www.scotland.org/> .
+<http://www.wikidata.org/prop/statement/P856> <http://www.w3.org/2000/01/rdf-schema#label> "official website"@en .
+<http://www.wikidata.org/prop/statement/P856> <http://www.w3.org/2000/01/rdf-schema#label> "offizielle Website"@de .
+<http://www.wikidata.org/prop/statement/P856> <http://www.w3.org/2000/01/rdf-schema#label> "site officiel"@fr .

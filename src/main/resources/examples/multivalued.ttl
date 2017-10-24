@@ -1,0 +1,10 @@
+@base <http://example.org/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+<#spiderman>
+    a foaf:Person;
+    foaf:name "Spiderman", "Spider-Man", "Spider man", "Человек-паук"@ru.
+
+<#green-goblin>
+    a foaf:Person;
+    foaf:name "Green Goblin" .

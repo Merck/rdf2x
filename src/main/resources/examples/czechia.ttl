@@ -1,0 +1,24 @@
+@base <http://example.org/resource/> .
+@prefix example: <http://example.org/ns/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<#Prague>
+    a example:City;
+    example:name "Prague", "Praha"@cs;
+    example:capitalOf <#Czechia>;
+    example:population 1267449.
+
+<#Czechia>
+    a example:Country;
+    example:name "Czech republic", "Czechia", "Česká republika"@cs;
+    example:neighborOf <#Germany>;
+    example:population 10553843.
+
+<#Germany>
+    a example:Country;
+    example:name "Germany", "Deutschland"@de;
+    example:neighborOf <#Czechia>.
+
+example:City rdfs:subClassOf example:Location.
+example:Country rdfs:subClassOf example:Location.
+

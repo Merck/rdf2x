@@ -1,0 +1,18 @@
+@prefix ns0: <http://t.com/rel#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ns1: <http://another.com/rel#> .
+
+<http://t.com/flavors#Sweet> a <http://t.com/types#Flavor> .
+<http://t.com/flavors#Sour> a <http://t.com/types#Flavor> .
+<http://t.com/fruit#Apple>
+  ns0:Flavor <http://t.com/flavors#Sweet> ;
+  a <http://t.com/types#Fruit> ;
+  ns0:Weight "100"^^xsd:int, "150"^^xsd:int, "TBD"^^xsd:string .
+
+<http://t.com/fruit#Tomato>
+  ns0:Flavor <http://t.com/flavors#Sweet>, <http://t.com/flavors#Sour> ;
+  ns0:Weight "100"^^xsd:int ;
+  ns1:Weight "110"^^xsd:int ;
+  a <http://t.com/types#Fruit>, <http://t.com/types#Vegetable> .
+
+<http://t.com/fruit#Cucumber> a <http://t.com/types#Vegetable> .

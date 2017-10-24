@@ -1,0 +1,19 @@
+<http://t.com/flavors#Sweet> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://t.com/types#Flavor> <http://t.com/fruit> .
+<http://t.com/flavors#Sour> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://t.com/types#Flavor> <http://t.com/fruit> .
+<http://t.com/fruit#Apple> <http://t.com/rel#HasFlavor> <http://t.com/flavors#Sweet> <http://t.com/fruit> .
+<http://t.com/fruit#Apple> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://t.com/types#Fruit> <http://t.com/fruit> .
+<http://t.com/fruit#Apple> <http://t.com/rel#Weight> "150"^^<http://www.w3.org/2001/XMLSchema#int> <http://t.com/fruit> .
+<http://t.com/fruit#Apple> <http://t.com/rel#Weight> "180"^^<http://www.w3.org/2001/XMLSchema#int> <http://t.com/fruit> .
+<http://t.com/fruit#Apple> <http://t.com/rel#Weight> "100"^^<http://www.w3.org/2001/XMLSchema#int> <http://t.com/fruit> .
+<http://t.com/fruit#Apple> <http://t.com/rel#Weight> "TBD"^^<http://www.w3.org/2001/XMLSchema#string> <http://t.com/fruit> .
+<http://t.com/fruit#Tomato> <http://t.com/rel#HasFlavor> <http://t.com/flavors#Sweet> <http://t.com/fruit> .
+<http://t.com/fruit#Tomato> <http://t.com/rel#HasFlavor> <http://t.com/flavors#Sour> <http://t.com/fruit> .
+<http://t.com/fruit#Tomato> <http://t.com/rel#Weight> "100"^^<http://www.w3.org/2001/XMLSchema#int> <http://t.com/fruit> .
+<http://t.com/fruit#Tomato> <http://another.com/rel#Weight> "110"^^<http://www.w3.org/2001/XMLSchema#int> <http://t.com/fruit> .
+<http://t.com/fruit#Tomato> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://t.com/types#Fruit> <http://t.com/fruit> .
+<http://t.com/fruit#Tomato> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://t.com/types#Vegetable> <http://t.com/fruit> .
+<http://t.com/fruit#Cucumber> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://t.com/types#Vegetable> <http://t.com/fruit> .
+<http://t.com/fruit#Cucumber> <http://t.com/rel#IsTasty> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> <http://t.com/fruit> .
+<http://t.com/fruit#Cucumber> <http://t.com/rel#IsTasty> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> <http://t.com/fruit> .
+<http://t.com/fruit#Tomato> <http://t.com/rel#LooksLike> <http://t.com/fruit#Apple> <http://t.com/fruit> .
+<http://t.com/fruit#Tomato> <http://t.com/rel#Planted> "2016-01-04T00:00:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .

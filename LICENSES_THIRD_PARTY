@@ -1,0 +1,35 @@
+RDF2X uses third-party libraries which may be distributed under different
+licenses. We have attempted to list all of these third party libraries and 
+their licenses below (however the most up-to-date information can be found
+via Maven, see pom.xml)
+
+You must agree to the terms of these licenses, in addition to the RDF2X 
+source code license, in order to use this software.
+
+--------------------------------------------------
+Third party Java libraries listed by License type
+[Format: Name (Maven Project) - URL]
+--------------------------------------------------
+
+BSD License (http://www.opensource.org/licenses/BSD-3-Clause)
+ * PostgreSQL driver (org.postgresql:postgresql:*) - http://postgresql.org
+
+Apache Software License, Version 2.0 (http://opensource.org/licenses/apache2.0)
+ * Apache Jena (org.apache.jena:*) - https://jena.apache.org/
+ * JCommander (com.beust:jcommander:*) - http://jcommander.org/
+ * Spark CSV (com.databricks:spark-csv_2.10:*) - https://github.com/databricks/spark-csv
+ * Elasticsearch Spark (org.elasticsearch:elasticsearch-spark_2.10:*) - https://www.elastic.co/
+ * Apache Commons (org.apache.commons:*) - https://commons.apache.org/
+ * Spark Testing Base (com.holdenkarau:spark-testing-base_2.10:*) - https://github.com/holdenk/spark-testing-base
+ * Apache Spark (org.apache.spark:*) - http://spark.apache.org/
+
+Eclipse Distribution License - v 1.0 (https://eclipse.org/org/documents/edl-v10.php)
+ * RDF4J: Runtime (org.eclipse.rdf4j:*) - http://rdf4j.org/
+
+Eclipse Public License - v 1.0 (https://www.eclipse.org/legal/epl-v10.html)
+ * JGraphT Core (org.jgrapht:jgrapht-core:*) - http://jgrapht.org/
+ * JUnit (junit:*) - http://junit.org/junit4/
+
+The MIT License - (https://opensource.org/licenses/MIT)
+ * Mockito (org.mockito:*) - http://site.mockito.org/
+ * Project Lombok (org.projectlombok:*) - https://projectlombok.org/
