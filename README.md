@@ -74,11 +74,7 @@ Along with the entities and relationships, metadata is persisted:
 |        3|http://www.perceive.net/schemas/relationship/enemyOf |  enemyof| null|
 
 
-# Usage
-
-Run without arguments to show available parameters.
-
-## 1. Get your data
+# Data sources
 
 Download your RDF dataset, e.g. ClinicalTrials.gov:
 
@@ -97,9 +93,30 @@ hadoop fs -mkdir /path/to/datasets/clinicaltrials
 hadoop fs -put * /path/to/datasets/clinicaltrials
 ```
 
-## 2a. Run from source with Maven
+# Build
 
-### Minimal example
+Use Maven to get a packaged JAR file: 
+
+```bash
+# compile, run tests and create JAR
+mvn package
+
+# or without running tests
+mvn package -Dmaven.test.skip=true
+```
+
+# Example usage
+
+RDF2X can be executed [from source using Maven](#running-from-source), 
+[using a JAR file](#running-jar-using-spark-s).
+
+## Running from source
+
+To launch from source using Maven:
+
+- Install [JDK 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+- Install [Maven](https://maven.apache.org/download.cgi)
+- Run the following commands: 
 
 ```bash
 # Save to CSV
@@ -122,11 +139,8 @@ mvn exec:java -Dexec.args="convert \
 --db.user user \
 --db.password 123456 \
 --db.schema public"
-```
 
-### More config options
-
-```bash
+# More config options
 mvn \
 -Dspark.app.name="RDF2X My file" \
 -Dspark.master=local[2] \
@@ -145,25 +159,20 @@ exec:java  \
 --db.batchSize 1000"
 ```
 
-## 2b. Run with spark-submit
+Refer to the [Configuration](#configuration) section below for all config parameters.
 
-### Package the JAR
 
-```bash
-# compile, run tests and create JAR
-mvn package
 
-# or without running tests
-mvn package -Dmaven.test.skip=true
-```
 
-### Run in local mode
+## Running JAR using spark-submit
 
 To launch locally via spark-submit:
 
-- download [Spark 1.6](http://spark.apache.org/downloads.html)
-- add the Spark bin directory to your system PATH variable
-- run this command from the project target directory (or anywhere you have put your packaged JAR)
+- Install [JDK 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+- Download [Spark 1.6](http://spark.apache.org/downloads.html)
+- Add the Spark bin directory to your system PATH variable
+- Refer to the [Configuration](#configuration) section below for all config parameters.
+- Run this command from the project target directory (or anywhere you have put your packaged JAR)
 
 ```bash
 spark-submit \
@@ -187,12 +196,14 @@ convert \
 --output.saveMode Overwrite
 ```
 
-### Run on YARN
+## Running on YARN
 
-To launch on a cluster, you will only need copy the JAR you packaged earlier. 
-You can also copy your log4j.properties for the driver, e.g. the ones in src/main/properties/ folder.
+To launch on a cluster:
 
-#### Save to DB
+- Copy the JAR you packaged earlier to your server
+- Optionally, configure driver log level by referencing custom log4j.properties. You can copy and modify the existing ones in src/main/resources/ folder.
+
+### Run on YARN: Save to DB
 
 ```bash
 spark-submit \
@@ -222,7 +233,7 @@ convert \
 --db.batchSize 1000
 ```
 
-#### Save to CSV
+### Run on YARN: Save to CSV
 
 ```bash
 ...
@@ -230,7 +241,7 @@ convert \
 --output.folder hdfs:///path/to/clinicaltrials-csv/ 
 ```
 
-#### Save to JSON
+### Run on YARN: Save to JSON
 
 ```bash
 ...
@@ -238,7 +249,7 @@ convert \
 --output.folder hdfs:///path/to/clinicaltrials-csv/ 
 ```
 
-#### Save to ElasticSearch
+### Run on YARN: Save to ElasticSearch
 
 Note: 
 - Currently the data is saved to ElasticSearch in a relational format - entity and relation tables. 
@@ -269,7 +280,7 @@ convert \
 --es.index clinicaltrials
 ```
 
-Refer to the Configuration section below for all config parameters.
+Refer to the [Configuration](#configuration) section below for all config parameters.
 
 # Tested datasets
 
