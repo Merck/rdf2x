@@ -60,6 +60,16 @@ public class StatsConfig {
         /**
          * Count number of occurrences of each subject URI
          */
-        SUBJECT_URI_COUNT
+        SUBJECT_URI_COUNT,
+
+        /**
+         * Count number of occurrences of each predicate URI
+         */
+        PREDICATE_URI_COUNT,
+
+        /**
+         * Count number of occurrences of each object URI
+         */
+        OBJECT_URI_COUNT
     }
 }
