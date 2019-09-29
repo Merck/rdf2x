@@ -34,4 +34,18 @@ public class QuadCounter {
                 .reduceByKey((a, b) -> a + b);
     }
 
+    public static JavaPairRDD<String, Long> countByPredicateURI(JavaRDD<Quad> quads) {
+        return quads
+                .filter(quad -> quad.getPredicate().isURI())
+                .mapToPair(quad -> new Tuple2<>(quad.getPredicate().getURI(), 1L))
+                .reduceByKey((a, b) -> a + b);
+    }
+
+    public static JavaPairRDD<String, Long> getObjectURI(JavaRDD<Quad> quads) {
+        return quads
+                .filter(quad -> quad.getObject().isURI())
+                .mapToPair(quad -> new Tuple2<>(quad.getObject().getURI(), 1L))
+                .reduceByKey((a, b) -> a + b);
+    }
+
 }
