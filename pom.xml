@@ -5,7 +5,7 @@
     <groupId>com.merck.open</groupId>
     <artifactId>rdf2x</artifactId>
     <packaging>jar</packaging>
-    <version>0.1</version>
+    <version>0.1.1</version>
     <name>rdf2x</name>
     <url>http://maven.apache.org</url>
     <properties>
