@@ -51,17 +51,17 @@ public class StatsJob implements Runnable {
     /**
      * Subject URI count
      */
-    private long subjectURICount;
+    private Long subjectURICount;
 
     /**
      * Predicate URI count
      */
-    private long predicateURICount;
+    private Long predicateURICount;
 
     /**
      * Object URI count
      */
-    private long objectURICount;
+    private Long objectURICount;
 
     public StatsJob(StatsConfig config, JavaSparkContext sc) throws ConfigurationException {
         this.config = config;
@@ -130,9 +130,15 @@ public class StatsJob implements Runnable {
      */
     private void printStats() {
         log.info("---------------------------------");
-        log.info("Total Distinct Subject URIs: {}", subjectURICount);
-        log.info("Total Distinct Predicate URIs: {}", predicateURICount);
-        log.info("Total Distinct Object URIs: {}", objectURICount);
+        if(subjectURICount != null) {
+            log.info("Total Distinct Subject URIs: {}", subjectURICount);
+        }
+        if(predicateURICount != null) {
+            log.info("Total Distinct Predicate URIs: {}", predicateURICount);
+        }
+        if(objectURICount != null) {
+            log.info("Total Distinct Object URIs: {}", objectURICount);
+        }
         log.info("---------------------------------");
     }
 
