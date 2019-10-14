@@ -30,7 +30,7 @@ import scala.Tuple2;
 import javax.naming.ConfigurationException;
 import java.util.List;
 
-import static com.merck.rdf2x.jobs.stats.StatsConfig.Stat.SUBJECT_URI_COUNT;
+import static com.merck.rdf2x.jobs.stats.StatsConfig.Stat.*;
 
 /**
  * StatsJob computes various stats on RDF datasets.
@@ -47,6 +47,21 @@ public class StatsJob implements Runnable {
      * Spark context to be used
      */
     private final JavaSparkContext sc;
+
+    /**
+     * Subject URI count
+     */
+    private Long subjectURICount;
+
+    /**
+     * Predicate URI count
+     */
+    private Long predicateURICount;
+
+    /**
+     * Object URI count
+     */
+    private Long objectURICount;
 
     public StatsJob(StatsConfig config, JavaSparkContext sc) throws ConfigurationException {
         this.config = config;
@@ -80,12 +95,51 @@ public class StatsJob implements Runnable {
             counts.sortByKey(false).take(100).forEach(uriCount -> {
                 log.info(uriCount.toString());
             });
-            log.info("----------------------------");
-            log.info("Total Distinct Subject URIs: {}", counts.count());
-            log.info("----------------------------");
+            subjectURICount = counts.count();
             stats.remove(SUBJECT_URI_COUNT);
         }
 
+        if(stats.contains(PREDICATE_URI_COUNT)) {
+            log.info("----------------------------");
+            log.info("Predicate URI stats:");
+            JavaPairRDD<Long, String> counts = QuadCounter.countByPredicateURI(quads).mapToPair(Tuple2::swap);
+            counts.sortByKey(false).take(100).forEach(uriCount -> {
+                log.info(uriCount.toString());
+            });
+            predicateURICount = counts.count();
+            stats.remove(PREDICATE_URI_COUNT);
+        }
+
+        if(stats.contains(OBJECT_URI_COUNT)) {
+            log.info("----------------------------");
+            log.info("Object URI stats:");
+            JavaPairRDD<Long, String> counts = QuadCounter.getObjectURI(quads).mapToPair(Tuple2::swap);
+            counts.sortByKey(false).take(100).forEach( uriCount -> {
+                log.info(uriCount.toString());
+            });
+            objectURICount = counts.count();
+            stats.remove(OBJECT_URI_COUNT);
+        }
+
+        printStats();
+
+    }
+
+    /**
+     * Prints stats for distinct counts of {@link Quad} properties i.e. subject, predicate and object
+     */
+    private void printStats() {
+        log.info("---------------------------------");
+        if(subjectURICount != null) {
+            log.info("Total Distinct Subject URIs: {}", subjectURICount);
+        }
+        if(predicateURICount != null) {
+            log.info("Total Distinct Predicate URIs: {}", predicateURICount);
+        }
+        if(objectURICount != null) {
+            log.info("Total Distinct Object URIs: {}", objectURICount);
+        }
+        log.info("---------------------------------");
     }
 
 }

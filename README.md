@@ -195,6 +195,18 @@ convert \
 --db.batchSize 1000 \
 --output.saveMode Overwrite
 ```
+To run stats job via spark-submit:
+
+```bash
+spark-submit --name "RDF2X ClinicalTrials.gov" --class com.merck.rdf2x.main.Main --master 'local' \
+--driver-memory 2g \
+--packages postgresql:postgresql:9.1-901-1.jdbc4,org.eclipse.rdf4j:rdf4j-runtime:2.1.4,org.apache.jena:jena-core:3.1.1,org.apache.jena:jena-elephas-io:3.1.1,org.apache.jena:jena-elephas-mapreduce:0.9.0,com.beust:jcommander:1.58,com.databricks:spark-csv_2.10:1.5.0,org.elasticsearch:elasticsearch-spark_2.10:2.4.4,org.jgrapht:jgrapht-core:1.0.1 \
+rdf2x-0.1.jar \
+stats \
+--input.file  bio2rdf-clinicaltrials.nq \
+--input.batchSize 1000000 \
+--stat SUBJECT_URI_COUNT
+```
 
 ## Running on YARN
 
