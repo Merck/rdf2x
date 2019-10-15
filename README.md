@@ -107,8 +107,8 @@ mvn package -Dmaven.test.skip=true
 
 # Example usage
 
-RDF2X can be executed [from source using Maven](#running-from-source), 
-[using a JAR file](#running-jar-using-spark-s).
+RDF2X can be executed [from source using Maven](#running-from-source) or 
+[using a JAR file](#running-jar-using-spark-submit).
 
 ## Running from source
 
