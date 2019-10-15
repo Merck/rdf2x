@@ -1,6 +1,6 @@
 # RDF2X
 
-Convert big RDF datasets to RDB (relational database model), CSV, JSON and ElasticSearch using [Spark](http://spark.apache.org). 
+Convert big Linked Data RDF datasets to a relational database model, CSV, JSON and ElasticSearch using [Spark](http://spark.apache.org). 
 
 # Tutorials
 
