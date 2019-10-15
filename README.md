@@ -168,6 +168,7 @@ Refer to the [Configuration](#configuration) section below for all config parame
 
 To launch locally via spark-submit:
 
+- Download the packaged JAR from our [releases page](https://github.com/Merck/rdf2x/releases)
 - Install [JDK 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 - Download [Spark 1.6](http://spark.apache.org/downloads.html)
 - Add the Spark bin directory to your system PATH variable
