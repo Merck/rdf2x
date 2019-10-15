@@ -1,8 +1,11 @@
 # RDF2X
 
-Convert big RDF datasets to RDB (relational database model), CSV, JSON and ElasticSearch. 
+Convert big RDF datasets to RDB (relational database model), CSV, JSON and ElasticSearch using [Spark](http://spark.apache.org). 
 
-RDF2X runs on [Spark 1.6.2](http://spark.apache.org). 
+# Tutorials
+
+[Visualizing ClinicalTrials.gov RDF data in Tableau using RDF2X](https://medium.com/@david.prihoda/visualizing-clinicaltrials-gov-rdf-data-in-tableau-using-rdf2x-bd5bb5c97f0a)
+[Querying Wikidata RDF with SQL using RDF2X](https://medium.com/@david.prihoda/querying-wikidata-rdf-with-sql-using-rdf2x-324f18219adf)
 
 # Examples
 
