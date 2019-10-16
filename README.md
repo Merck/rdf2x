@@ -2,7 +2,7 @@
 
 Convert big Linked Data RDF datasets to a relational database model, CSV, JSON and ElasticSearch using [Spark](http://spark.apache.org). 
 
-![image](https://user-images.githubusercontent.com/2894124/66893669-dff2d880-efee-11e9-8cba-fcfbf942d13b.png)
+![image](https://user-images.githubusercontent.com/2894124/66893915-6d362d00-efef-11e9-8515-ccf04274d61f.png)
 
 # Tutorials
 
