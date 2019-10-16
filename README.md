@@ -2,114 +2,15 @@
 
 Convert big Linked Data RDF datasets to a relational database model, CSV, JSON and ElasticSearch using [Spark](http://spark.apache.org). 
 
+![image](https://user-images.githubusercontent.com/2894124/66893669-dff2d880-efee-11e9-8cba-fcfbf942d13b.png)
+
 # Tutorials
 
 [Visualizing ClinicalTrials.gov RDF data in Tableau using RDF2X](https://medium.com/@david.prihoda/visualizing-clinicaltrials-gov-rdf-data-in-tableau-using-rdf2x-bd5bb5c97f0a)
 
 [Querying Wikidata RDF with SQL using RDF2X](https://medium.com/@david.prihoda/querying-wikidata-rdf-with-sql-using-rdf2x-324f18219adf)
 
-# Examples
-
-Consider this simple example from the [W3C Turtle specification](https://www.w3.org/TR/turtle/):
-
-```
-@base <http://example.org/> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix rel: <http://www.perceive.net/schemas/relationship/> .
-
-<#green-goblin>
-        rel:enemyOf <#spiderman> ;
-        a foaf:Person ;    # in the context of the Marvel universe
-        foaf:name "Green Goblin" .
-
-<#spiderman>
-        rel:enemyOf <#green-goblin> ;
-        a foaf:Person ;
-        foaf:name "Spiderman", "Человек-паук"@ru .
-```
-
-## Database output
-
-Converting to SQL format will result in the following tables:
-
-### Person
-
-| ID|          URI|name_ru_string| name_string|
-|---|-------------|--------------|------------|
-|  1|#green-goblin|          null|Green Goblin|
-|  2|   #spiderman|  Человек-паук|   Spiderman|
-
-### Person_Person
-
-|person_ID_from|person_ID_to|predicate|
-|--------------|------------|---------|
-|             2|           1|        3|
-|             1|           2|        3|
-
-Along with the entities and relationships, metadata is persisted:
-
-### _META_Entities:
-
-|                             URI|  name|  label| num_rows|
-|--------------------------------|------|-------|---------|
-|http://xmlns.com/foaf/0.1/Person|Person|   null|        2|
-
-### _META_Columns
-
-|          name|predicate|  type|multivalued|language|non_null|entity_name|
-|--------------|---------|------|-----------|--------|--------|-----------|
-|name_ru_string|        2|STRING|      false|      ru|     0.5|     Person|
-|   name_string|        2|STRING|      false|    null|       1|     Person|
-
-### _META_Relations
-
-|         name|from_name|to_name|
-|-------------|---------|-------|
-|person_person|   person| person|
-
-### _META_Predicates
-
-|predicate|                 URI|     name|label|
-|---------|--------------------|---------|-----|
-|        1|http://www.w3.org/1999/02/22-rdf-syntax-ns#type      |     type| null|
-|        2|http://xmlns.com/foaf/0.1/name                       |     name| null|
-|        3|http://www.perceive.net/schemas/relationship/enemyOf |  enemyof| null|
-
-
-# Data sources
-
-Download your RDF dataset, e.g. ClinicalTrials.gov:
-
-```bash
-wget http://download.bio2rdf.org/release/4/clinicaltrials/clinicaltrials.nq.gz
-```
-
-If you plan on using a cluster, add the data to HDFS:
-
-```bash
-# Single file
-hadoop fs -put clinicaltrials.nq.gz /path/to/datasets/
-
-# Multiple files
-hadoop fs -mkdir /path/to/datasets/clinicaltrials
-hadoop fs -put * /path/to/datasets/clinicaltrials
-```
-
-# Build
-
-Use Maven to get a packaged JAR file: 
-
-```bash
-# compile, run tests and create JAR
-mvn package
-
-# or without running tests
-mvn package -Dmaven.test.skip=true
-```
-
-# Example usage
+# Get started
 
 RDF2X can be executed [from source using Maven](#running-from-source) or 
 [using a JAR file](#running-jar-using-spark-submit).
@@ -298,6 +199,109 @@ convert \
 ```
 
 Refer to the [Configuration](#configuration) section below for all config parameters.
+
+## Data sources
+
+Download your RDF dataset, e.g. ClinicalTrials.gov:
+
+```bash
+wget http://download.bio2rdf.org/release/4/clinicaltrials/clinicaltrials.nq.gz
+```
+
+If you plan on using a cluster, add the data to HDFS:
+
+```bash
+# Single file
+hadoop fs -put clinicaltrials.nq.gz /path/to/datasets/
+
+# Multiple files
+hadoop fs -mkdir /path/to/datasets/clinicaltrials
+hadoop fs -put * /path/to/datasets/clinicaltrials
+```
+
+## Building RDF2X JAR
+
+Use Maven to get a packaged JAR file: 
+
+```bash
+# compile, run tests and create JAR
+mvn package
+
+# or without running tests
+mvn package -Dmaven.test.skip=true
+```
+
+
+# Example
+
+Consider this simple example from the [W3C Turtle specification](https://www.w3.org/TR/turtle/):
+
+```
+@base <http://example.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rel: <http://www.perceive.net/schemas/relationship/> .
+
+<#green-goblin>
+        rel:enemyOf <#spiderman> ;
+        a foaf:Person ;    # in the context of the Marvel universe
+        foaf:name "Green Goblin" .
+
+<#spiderman>
+        rel:enemyOf <#green-goblin> ;
+        a foaf:Person ;
+        foaf:name "Spiderman", "Человек-паук"@ru .
+```
+
+## Database output
+
+Converting to SQL format will result in the following tables:
+
+### Person
+
+| ID|          URI|name_ru_string| name_string|
+|---|-------------|--------------|------------|
+|  1|#green-goblin|          null|Green Goblin|
+|  2|   #spiderman|  Человек-паук|   Spiderman|
+
+### Person_Person
+
+|person_ID_from|person_ID_to|predicate|
+|--------------|------------|---------|
+|             2|           1|        3|
+|             1|           2|        3|
+
+Along with the entities and relationships, metadata is persisted:
+
+### _META_Entities:
+
+|                             URI|  name|  label| num_rows|
+|--------------------------------|------|-------|---------|
+|http://xmlns.com/foaf/0.1/Person|Person|   null|        2|
+
+### _META_Columns
+
+|          name|predicate|  type|multivalued|language|non_null|entity_name|
+|--------------|---------|------|-----------|--------|--------|-----------|
+|name_ru_string|        2|STRING|      false|      ru|     0.5|     Person|
+|   name_string|        2|STRING|      false|    null|       1|     Person|
+
+### _META_Relations
+
+|         name|from_name|to_name|
+|-------------|---------|-------|
+|person_person|   person| person|
+
+### _META_Predicates
+
+|predicate|                 URI|     name|label|
+|---------|--------------------|---------|-----|
+|        1|http://www.w3.org/1999/02/22-rdf-syntax-ns#type      |     type| null|
+|        2|http://xmlns.com/foaf/0.1/name                       |     name| null|
+|        3|http://www.perceive.net/schemas/relationship/enemyOf |  enemyof| null|
+
+
 
 # Tested datasets
 
