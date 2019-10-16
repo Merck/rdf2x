@@ -10,6 +10,8 @@ Convert big Linked Data RDF datasets to a relational database model, CSV, JSON a
 
 [Querying Wikidata RDF with SQL using RDF2X](https://medium.com/@david.prihoda/querying-wikidata-rdf-with-sql-using-rdf2x-324f18219adf)
 
+[Distributed Conversion of RDF Data to the Relational Model (thesis)](http://davidprihoda.com/rdf2x/Distributed_Conversion_of_RDF_Data_to_the_Relational_Model.pdf)
+
 # Get started
 
 RDF2X can be executed [from source using Maven](#running-from-source) or 
