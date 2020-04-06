@@ -26,6 +26,9 @@ To launch from source using Maven:
 - Run the following commands: 
 
 ```bash
+# First build the project
+mvn compile
+
 # Save to CSV
 mvn exec:java -Dexec.args="convert \
 --input.file /path/to/input/ \
