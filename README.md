@@ -2,6 +2,12 @@
 
 Convert big Linked Data RDF datasets to a relational database model, CSV, JSON and ElasticSearch using [Spark](http://spark.apache.org). 
 
+## Disclaimer
+
+> :warning: **RDF2X is using Spark 1.6** which was found to have high severity security issues with deserialization https://github.com/advisories/GHSA-8rhc-48pp-52gr. Use at your own risk. 
+
+## Architecture 
+
 ![image](https://user-images.githubusercontent.com/2894124/66893915-6d362d00-efef-11e9-8515-ccf04274d61f.png)
 
 # Tutorials
