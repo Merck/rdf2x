@@ -4,7 +4,7 @@ Convert big Linked Data RDF datasets to a relational database model, CSV, JSON a
 
 ## Disclaimer
 
-> :warning: **RDF2X is using Spark 1.6** which was found to have high severity security issues with deserialization https://github.com/advisories/GHSA-8rhc-48pp-52gr. Use at your own risk. 
+:warning: **RDF2X is using Spark 1.6** which was found to have high severity security issues with deserialization https://github.com/advisories/GHSA-8rhc-48pp-52gr. Use at your own risk. 
 
 ## Architecture 
 
