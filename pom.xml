@@ -156,10 +156,6 @@
                             <key>spark.master</key>
                             <value>local</value>
                         </systemProperty>
-                        <systemProperty>
-                            <key>spark.driver.memory</key>
-                            <value>1g</value>
-                        </systemProperty>
                     </systemProperties>
                 </configuration>
                 <dependencies>
