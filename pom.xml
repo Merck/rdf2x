@@ -9,7 +9,7 @@
     <name>rdf2x</name>
     <url>http://maven.apache.org</url>
     <properties>
-        <jena.version>3.1.1</jena.version>
+        <jena.version>4.2.0</jena.version>
         <scala.version>2.10</scala.version>
         <spark.version>1.6.2</spark.version>
         <spark.testing.version>1.6.2_0.6.0</spark.testing.version>
